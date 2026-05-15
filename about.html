@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Frequency Sweep Generator</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg" />
+<link rel="stylesheet" href="legal.css" />
+</head>
+<body>
+  <div class="container">
+    <a class="back" href="index.html">← Back to generator</a>
+
+    <header class="page-head">
+      <h1>About</h1>
+      <p class="updated">A free, browser-based frequency sweep generator</p>
+    </header>
+
+    <main>
+      <h2>What it does</h2>
+      <p>The Frequency Sweep Generator produces continuous audio tones that sweep from a starting frequency to an ending frequency over a chosen duration. It supports four waveforms — sine, square, sawtooth, and triangle — and two sweep curves: linear and exponential (logarithmic).</p>
+
+      <h2>What it's useful for</h2>
+      <ul>
+        <li><strong>Speaker and headphone testing</strong> — find rattles, resonances, and frequency dropouts.</li>
+        <li><strong>Room acoustics</strong> — measure room modes and standing waves.</li>
+        <li><strong>Hearing range checks</strong> — sweep through the audible spectrum to find your personal cutoff (this is <em>not</em> a medical test).</li>
+        <li><strong>Audio production</strong> — generate reference tones and risers for music and sound design.</li>
+        <li><strong>Education</strong> — demonstrate frequency, waveforms, and the perception of pitch.</li>
+      </ul>
+
+      <h2>How it works</h2>
+      <p>All audio synthesis happens in your browser using the <strong>Web Audio API</strong>. There is no server-side rendering, no upload, no cloud processing. The sweep itself is driven by the browser's audio thread using <code>OscillatorNode.frequency.exponentialRampToValueAtTime()</code> (or <code>linearRampToValueAtTime()</code>), giving sample-accurate frequency automation.</p>
+      <p>Downloads are also rendered locally: the same parameters are run through an <code>OfflineAudioContext</code> to produce a buffer, which is then encoded to WAV (16-bit PCM) or MP3 (128 kbps mono, via <a href="https://github.com/zhuker/lamejs" target="_blank" rel="noopener">lamejs</a>).</p>
+
+      <h2>Privacy</h2>
+      <p>Your audio settings and generated files never leave your device. The Site uses Cloudflare for hosting and may display advertisements; see our <a href="privacy.html">Privacy Policy</a> for details.</p>
+
+      <h2>Free to use</h2>
+      <p>The tool is free for personal and commercial use. Audio files you generate are yours.</p>
+
+      <h2>Tech stack</h2>
+      <ul>
+        <li>HTML, CSS, vanilla JavaScript — no frameworks, no build step.</li>
+        <li>Web Audio API for synthesis and offline rendering.</li>
+        <li>lamejs (MIT licensed) for MP3 encoding in the browser.</li>
+        <li>Static hosting on Cloudflare Pages.</li>
+      </ul>
+
+      <h2>Feedback</h2>
+      <p>Spotted a bug or have an idea? Email philip97hd@gmail.com — see <a href="contact.html">Contact</a>.</p>
+    </main>
+
+    <footer class="page-foot">
+      <a href="index.html">Home</a> ·
+      <a href="about.html">About</a> ·
+      <a href="terms.html">Terms</a> ·
+      <a href="privacy.html">Privacy</a> ·
+      <a href="contact.html">Contact</a>
+    </footer>
+  </div>
+</body>
+</html>
