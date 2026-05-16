@@ -72,14 +72,6 @@ main code {
 }
 main ul { padding-left: 22px; }
 main li { margin-bottom: 6px; }
-.placeholder {
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px dashed var(--accent);
-  padding: 1px 6px;
-  border-radius: 4px;
-  color: var(--accent-2);
-  font-size: 13px;
-}
 footer.page-foot {
   text-align: center;
   margin-top: 24px;
